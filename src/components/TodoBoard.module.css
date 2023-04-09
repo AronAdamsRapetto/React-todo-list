@@ -4,6 +4,11 @@
   margin: 4rem 0 2rem;
 }
 
+.createdTasks, .doneTasks {
+  display: flex;
+  align-items: center;
+}
+
 .createdTasks strong {
   color: var(--blue);
   padding-right: 0.5rem;
@@ -16,10 +21,11 @@
 
 .counter {
   background: var(--gray-400);
-  padding: 0 0.5rem;
+  padding: 0.125rem 0.5rem;
   border-radius: 8px;
   font-weight: 700;
-  color: var(--gray-200)
+  color: var(--gray-200);
+  font-size: 0.75rem;
 }
 
 .tasksBoard {
