@@ -10,19 +10,31 @@ export function TodoBoard() {
   const [tasks, setTasks] = useState<TaskInterface[]>([]);
 
   const isTaskListEmpty = tasks.length === 0;
+  const createdTasks = tasks.length;
+  const doneTasks = tasks.reduce((acc, { isDone }): number => {
+    if (isDone) return acc += 1
+    return acc
+  }, 0);
+  
   return (
     <div>
-      <InputTask newTaskText={newTaskText} setNewTaskText={setNewTaskText} setTask={setTasks} />
+      <InputTask
+        newTaskText={newTaskText}
+        setNewTaskText={setNewTaskText}
+        setTask={setTasks}
+      />
 
       <div className={styles.tasksInfo}>
         <div className={styles.createdTasks}>
           <strong>Tarefas Criadas</strong>
-          <span className={styles.counter}>0</span>
+          <span className={styles.counter}>{createdTasks}</span>
         </div>
 
         <div className={styles.doneTasks}>
           <strong>Concluídas</strong>
-          <span className={styles.counter}>0</span>
+          <span className={styles.counter}>
+            { isTaskListEmpty ? 0 : `${doneTasks} de ${createdTasks}` }
+          </span>
         </div>
       </div>
       
