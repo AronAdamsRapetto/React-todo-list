@@ -1,7 +1,8 @@
 import { PlusCircle } from "phosphor-react";
 import styles from './InputTask.module.css';
+import { InputTaskInterface } from "../interfaces/InputTask.interface";
 
-export function InputTask() {
+export function InputTask({ newTaskText, setNewTaskText, setTask }: InputTaskInterface) {
   return (
     <div className={styles.inputBox}>
       <input type='text' placeholder='Adicione uma nova tarefa'/>
