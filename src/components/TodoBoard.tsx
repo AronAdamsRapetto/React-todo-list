@@ -12,7 +12,7 @@ export function TodoBoard() {
   const isTaskListEmpty = tasks.length === 0;
   return (
     <div>
-      <InputTask newTaskText={newTaskText} setNewTaskText={setNewTaskText} setTasks={setTasks} />
+      <InputTask newTaskText={newTaskText} setNewTaskText={setNewTaskText} setTask={setTasks} />
 
       <div className={styles.tasksInfo}>
         <div className={styles.createdTasks}>
