@@ -1,7 +1,9 @@
+import './global.css';
+
 function App() {
 
   return (
-    <div>
+    <div className="App">
       <h1>Todo-list</h1>      
     </div>
   )
