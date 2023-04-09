@@ -1,7 +1,8 @@
 import { Check, Circle, Trash } from 'phosphor-react';
 import styles from './Task.module.css';
+import { TaskInterface } from '../interfaces/Task.interface';
 
-export function Task() {
+export function Task(props: TaskInterface) {
 
   return (
     <div className={styles.task}>
