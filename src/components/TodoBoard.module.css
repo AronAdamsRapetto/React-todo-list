@@ -1,0 +1,40 @@
+.tasksInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 0 2rem;
+}
+
+.createdTasks strong {
+  color: var(--blue);
+  padding-right: 0.5rem;
+}
+
+.doneTasks strong {
+  color: var(--purple);
+  padding-right: 0.5rem;
+}
+
+.counter {
+  background: var(--gray-400);
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--gray-200)
+}
+
+.tasksBoard {
+  display: flex;
+  flex-direction: column;
+  min-height: 15.25rem;
+}
+
+.emptyMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+
+.emptyMessage svg {
+  margin-bottom: 1rem;
+}

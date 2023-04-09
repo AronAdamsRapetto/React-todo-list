@@ -1,3 +1,4 @@
+import { TodoBoard } from './components/TodoBoard';
 import TodoLogo from './assets/TodoLogo.svg';
 import { PlusCircle } from 'phosphor-react';
 import styles from './App.module.css';
@@ -14,7 +15,8 @@ function App() {
         <div className={styles.inputBox}>
           <input type='text' placeholder='Adicione uma nova tarefa'/>
           <button type='button'>Criar <PlusCircle size={24} /></button>
-        </div>  
+        </div>
+        <TodoBoard />
       </main>
     </div>
   )
