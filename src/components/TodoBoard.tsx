@@ -46,8 +46,12 @@ export function TodoBoard() {
               <strong>Você ainda não tem tarefas cadastradas</strong>
               <span>Crie tarefas e organize seus itens a fazer</span>
             </div>
-          ) : tasks.map(({ task, isDone }) => (
-            <Task task={task} isDone={isDone} key={task} />
+          ) : tasks.map((task) => (
+            <Task
+              key={task.id}
+              setTasks={setTasks}
+              {...task}
+            />
           ))
         }
       </div>

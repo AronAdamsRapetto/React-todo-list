@@ -1,17 +1,43 @@
 import { Check, Circle, Trash } from 'phosphor-react';
 import styles from './Task.module.css';
-import { TaskInterface } from '../interfaces/Task.interface';
+import { TaskProps } from '../interfaces/Task.interface';
 
-export function Task(props: TaskInterface) {
+export function Task({ task, isDone, id, setTasks }: TaskProps) {
+  
+  const handleClickStatusTask = () => {
+    const changedTask = {
+      id,
+      task,
+      isDone: !isDone
+    }
 
+    setTasks((state) => state.map((task) => {
+      if (task.id === id) return changedTask
+      return task
+    }));
+  }
+
+  const handleClickDeleteTask = () => {
+    setTasks(state => state.filter(({id: taskId}) => id !== taskId))
+  }
+  
   return (
     <div className={styles.task}>
-      <div className={styles.uncheckedIcon}>
-        {/* <Check size={16} /> */}
-        <Circle size={24} />
+      <div className={styles.taskView}>
+        <div
+          onClick={handleClickStatusTask}
+          className={ isDone ? styles.checkedIcon : styles.uncheckedIcon}
+        >
+          { isDone ? <Check size={16} /> : <Circle size={24} /> }
+        </div>
+
+        <span
+          className={isDone ? styles.checkedTask : styles.uncheckedTask}
+        >
+          { task }
+        </span>
       </div>
-      <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-      <button className={styles.trashIcon}> 
+      <button onClick={handleClickDeleteTask} className={styles.trashIcon}> 
         <Trash size={24} />
       </button>
     </div>

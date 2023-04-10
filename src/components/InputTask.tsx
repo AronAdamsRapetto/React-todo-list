@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { PlusCircle } from "phosphor-react";
 import styles from './InputTask.module.css';
 import { InputTaskInterface } from "../interfaces/InputTask.interface";
@@ -11,6 +12,7 @@ export function InputTask({ newTaskText, setNewTaskText, setTask }: InputTaskInt
 
   const handleCreateTaskClick = () => {
     const newTask = {
+      id: uuidv4(),
       task: newTaskText,
       isDone: false,
     };

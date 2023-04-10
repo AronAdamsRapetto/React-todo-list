@@ -8,10 +8,17 @@
   gap: 0.75rem;
   border: 1px solid (--gray-400);
   border-radius: 8px;
+  justify-content: space-between;
 }
 
 .task + .task {
   margin-top: 0.75rem;
+}
+
+.taskView {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .checkedIcon {
@@ -19,7 +26,7 @@
   background: var(--purpleDark);
   color: var(--gray-100);
   border-radius: 100%;
-  padding: 0.2rem;
+  padding: 0.3rem;
   transition: background 0.1s;
 }
 
@@ -28,16 +35,23 @@
 }
 
 .uncheckedIcon {
+  display: flex;
   color: var(--blue);
-  transition: 0.1s
+  transition: backgroud 0.1s
 }
 
 .uncheckedIcon:hover {
   color: var(--blueDark);
 }
 
-.task span {
+.uncheckedTask {
+  font-size: 0,875rem;
   color: var(--gray-100);
+}
+
+.checkedTask {
+  color: var(--gray-300);
+  text-decoration-line: line-through;
 }
 
 .trashIcon {
